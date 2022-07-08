@@ -1,6 +1,6 @@
 /*
   for development (auto compile and run)
-  `ls *.cpp | entr -r -s "g++ rotate_left_02.cpp && ./a.out; rm a.out"`
+  `ls *.cpp | entr -r -s "g++ rotate_right_02.cpp && ./a.out; rm a.out"`
 */
 #include <iostream>
 using namespace std;
@@ -12,7 +12,7 @@ void printArray(int arrArg[], int arrLeng);
 int main()
 {
     int arr[] = {2, 5, 8, 1, 4};
-    int arrleng, rotateBy = 8;
+    int arrleng, rotateBy = 9;
     arrleng = sizeof(arr) / sizeof(arr[0]);
 
     cout
@@ -34,14 +34,14 @@ void rotateArray(int arrArg[], int arrLeng, int rotateBy)
     if (rotateBy > 0)
     {
         rotateBy > arrLeng ? rotateBy -= arrLeng : 1;
-        rotateLeft(arrArg, arrLeng, rotateBy);
+        rotateRight(arrArg, arrLeng, rotateBy);
     }
     else
     {
         rotateBy = -rotateBy;
 
         rotateBy > arrLeng ? rotateBy -= arrLeng : 1;
-        rotateRight(arrArg, arrLeng, rotateBy);
+        rotateLeft(arrArg, arrLeng, rotateBy);
     }
 }
 
